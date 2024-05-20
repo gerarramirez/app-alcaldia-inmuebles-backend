@@ -7,7 +7,7 @@ import sv.gob.sanmarcos.appcontrolinmuebles.model.Inmueble;
 import sv.gob.sanmarcos.appcontrolinmuebles.service.impl.InmuebleServiceImpl;
 
 import java.util.List;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/alcaldia/facturacion/inmueble")
 public class InmuebleController {

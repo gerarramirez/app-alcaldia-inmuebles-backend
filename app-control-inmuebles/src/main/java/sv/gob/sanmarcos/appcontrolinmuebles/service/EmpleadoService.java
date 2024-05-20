@@ -7,6 +7,9 @@ import java.util.Optional;
 
 public interface EmpleadoService {
     public List<Empleado> findAll();
+
+    public List<Empleado> findALLWithoutUser();
+
     public Optional<Empleado> findById(Integer id);
     public void Create(Empleado empleado);
 

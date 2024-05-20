@@ -8,7 +8,7 @@ import sv.gob.sanmarcos.appcontrolinmuebles.model.Usuario;
 import sv.gob.sanmarcos.appcontrolinmuebles.service.impl.UsuarioServiceImpl;
 
 import java.util.List;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/alcaldia/catalogo/usuario")
 public class UsuarioController {

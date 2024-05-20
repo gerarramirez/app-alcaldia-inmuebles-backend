@@ -23,6 +23,11 @@ public class EmpleadoController {
         return ResponseEntity.ok().body(empleadoService.findAll());
     }
 
+    @GetMapping("/findALLWithoutUser")
+    public ResponseEntity<List<Empleado>> findALLWithoutUser(){
+        return ResponseEntity.ok().body(empleadoService.findALLWithoutUser());
+    }
+
     @GetMapping("/findById/{id}")
     public  ResponseEntity<Empleado> findById(@PathVariable("id") Integer id){
         return  ResponseEntity.ok().body(empleadoService.findById(id).get());

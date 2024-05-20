@@ -8,6 +8,7 @@ import sv.gob.sanmarcos.appcontrolinmuebles.service.impl.PropietarioServiceImpl;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/alcaldia/catalogo/propietario")
 public class PropietarioController {

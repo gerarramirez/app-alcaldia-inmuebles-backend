@@ -20,6 +20,11 @@ public class EmpleadoServiceImpl implements EmpleadoService {
     }
 
     @Override
+    public List<Empleado> findALLWithoutUser() {
+        return empleadoRepository.findALLWithoutUser();
+    }
+
+    @Override
     public Optional<Empleado> findById(Integer id) {
         return empleadoRepository.findById(id);
     }
