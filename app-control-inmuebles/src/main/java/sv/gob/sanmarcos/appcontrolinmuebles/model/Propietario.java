@@ -1,5 +1,6 @@
 package sv.gob.sanmarcos.appcontrolinmuebles.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
@@ -27,6 +28,8 @@ public class Propietario {
     private String telefono;
     @Column
     private String correoElectronico;
+
+    @JsonIgnore
     @Column(updatable = false)
     @CreationTimestamp
     private Date fechaIngreso;

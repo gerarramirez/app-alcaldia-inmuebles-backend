@@ -1,10 +1,10 @@
 package sv.gob.sanmarcos.appcontrolinmuebles.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.Date;
 
@@ -23,6 +23,8 @@ public class Empleado {
     private String apellido;
     @Column(unique = true)
     private String email;
+
+    @JsonIgnore
     @CreationTimestamp
     @Column(updatable = false)
     private Date fechaIngreso;

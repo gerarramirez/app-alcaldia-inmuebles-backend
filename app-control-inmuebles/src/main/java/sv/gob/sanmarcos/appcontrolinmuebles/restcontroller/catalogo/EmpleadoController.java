@@ -1,6 +1,8 @@
 package sv.gob.sanmarcos.appcontrolinmuebles.restcontroller.catalogo;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import sv.gob.sanmarcos.appcontrolinmuebles.model.Empleado;
@@ -9,7 +11,8 @@ import sv.gob.sanmarcos.appcontrolinmuebles.service.impl.EmpleadoServiceImpl;
 import java.util.List;
 
 @RestController
-@RequestMapping("/alcaldia/catalogo/empleado")
+@CrossOrigin
+@RequestMapping(value = "/alcaldia/catalogo/empleado")
 public class EmpleadoController {
 
     @Autowired
@@ -25,8 +28,8 @@ public class EmpleadoController {
         return  ResponseEntity.ok().body(empleadoService.findById(id).get());
     }
 
-    @PostMapping("/create")
-    public ResponseEntity<String> create(@RequestBody Empleado empleado){
+    @PostMapping(value = "/create")
+    public ResponseEntity<String> create(@RequestBody Empleado empleado, HttpServletRequest request){
         empleadoService.Create(empleado);
         return  ResponseEntity.ok("ok");
     }

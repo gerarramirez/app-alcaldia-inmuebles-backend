@@ -1,5 +1,6 @@
 package sv.gob.sanmarcos.appcontrolinmuebles.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
@@ -19,6 +20,7 @@ public class Usuario {
     @Column
     private String clave;
 
+    @JsonIgnore
     @Column(updatable = false)
     @CreationTimestamp
     private Date fechaIngreso;
