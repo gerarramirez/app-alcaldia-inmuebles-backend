@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-@RequestMapping(value = "/alcaldia/catalogo/empleado")
+@RequestMapping(value = "/api/alcaldia/catalogo/empleado")
 public class EmpleadoController {
 
     @Autowired

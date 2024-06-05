@@ -9,7 +9,7 @@ import sv.gob.sanmarcos.appcontrolinmuebles.service.impl.InmuebleServiceImpl;
 import java.util.List;
 @CrossOrigin
 @RestController
-@RequestMapping("/alcaldia/facturacion/inmueble")
+@RequestMapping("/api/alcaldia/facturacion/inmueble")
 public class InmuebleController {
     
     @Autowired
@@ -19,6 +19,11 @@ public class InmuebleController {
     @GetMapping("/findAll")
     public ResponseEntity<List<Inmueble>> findALL(){
         return ResponseEntity.ok().body(inmuebleService.findAll());
+    }
+
+    @GetMapping("/findAllWithoutFacturacion")
+    public ResponseEntity<List<Inmueble>> findAllWithoutFacturacion(){
+        return ResponseEntity.ok().body(inmuebleService.findAllWithoutFacturacion());
     }
 
     @GetMapping("/findById/{id}")

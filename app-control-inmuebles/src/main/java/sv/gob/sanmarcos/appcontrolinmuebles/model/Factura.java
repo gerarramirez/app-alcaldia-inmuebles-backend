@@ -1,5 +1,6 @@
 package sv.gob.sanmarcos.appcontrolinmuebles.model;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -8,29 +9,27 @@ import org.hibernate.annotations.CreationTimestamp;
 import java.util.Date;
 
 @Data
-@Table(schema = "main_sm")
 @Entity
-public class Propietario {
+@Table(schema = "main_sm")
+public class Factura {
 
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "id_Sequence")
-    @SequenceGenerator(name = "id_Sequence", sequenceName = "propietario_id_seq", schema = "main_sm", initialValue = 1, allocationSize = 1)
+    @SequenceGenerator(name = "id_Sequence", sequenceName = "factura_id_seq", schema = "main_sm", initialValue = 1, allocationSize = 1)
     private Integer id;
     @Column
-    private String tipoDocumento;
-    @Column(unique = true)
-    private String documento;
+    private String serieMh;
     @Column
-    private String nombre;
+    private String noRegistro;
     @Column
-    private String apellido;
+    private String nit;
     @Column
-    private String telefono;
-    @Column
-    private String email;
-
+    private Boolean estado;
     @JsonIgnore
-    @Column(updatable = false)
     @CreationTimestamp
     private Date fechaIngreso;
+    @Column
+    private Integer desde;
+    @Column
+    private Integer hasta;
 }

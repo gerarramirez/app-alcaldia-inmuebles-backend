@@ -21,6 +21,11 @@ public class InmuebleServiceImpl implements InmuebleService {
     }
 
     @Override
+    public List<Inmueble> findAllWithoutFacturacion() {
+        return inmuebleRepository.findAllWithoutFacturacion();
+    }
+
+    @Override
     public Optional<Inmueble> findById(Integer id) {
         return inmuebleRepository.findById(id);
     }

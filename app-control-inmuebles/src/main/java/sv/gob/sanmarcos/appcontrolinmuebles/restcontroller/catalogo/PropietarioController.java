@@ -10,7 +10,7 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/alcaldia/catalogo/propietario")
+@RequestMapping("/api/alcaldia/catalogo/propietario")
 public class PropietarioController {
 
     @Autowired

@@ -1,5 +1,6 @@
 package sv.gob.sanmarcos.appcontrolinmuebles.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
@@ -13,6 +14,8 @@ import java.util.Date;
 public class Facturacion {
     @Id
     private String noFacturacion;
+    @Column
+    private String Serie;
     @OneToOne
     @JoinColumn(name = "id_inmueble", referencedColumnName = "id")
     private Inmueble inmueble;
@@ -23,5 +26,10 @@ public class Facturacion {
     private Date fechaFacturacion;
     @Column
     private BigDecimal montoFacturacion;
+
+    @JsonIgnore
+    @Column(updatable = false)
+    @CreationTimestamp
+    private Date fechaIngreso;
 
 }

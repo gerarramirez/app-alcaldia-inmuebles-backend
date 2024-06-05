@@ -8,6 +8,8 @@ import java.util.Optional;
 public interface InmuebleService {
 
     public List<Inmueble> findAll();
+    public List<Inmueble> findAllWithoutFacturacion();
+
     public Optional<Inmueble> findById(Integer id);
     public void Create(Inmueble propietario);
 

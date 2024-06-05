@@ -8,8 +8,9 @@ import sv.gob.sanmarcos.appcontrolinmuebles.service.impl.FacturacionServiceImpl;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
-@RequestMapping("/alcaldia/facturacion")
+@RequestMapping("/api/alcaldia/facturacion")
 public class FacturacionController {
     
     @Autowired
